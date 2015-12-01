@@ -6,4 +6,4 @@ function min(a, b) {
 	} else {
 		console.log('they are equal');
 	}
-}
+};
