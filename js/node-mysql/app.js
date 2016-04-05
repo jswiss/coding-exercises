@@ -1,21 +1,40 @@
-var mysql = require("mysql");
+var mysql = require('mysql');
 
-//First connect to DB
 var con = mysql.createConnection({
-  host: "localhost",
-  user: "josh",
-  password: "12345"
+  host      : "127.0.0.1:3306",
+  user      : "josh",
+  password  : "",
+  database  : "node-mysql-db"
 });
 
 con.connect(function(err) {
   if (err) {
-    console.log('Error connecting to DB');
-    return;
+    throw err;
+  } else {
+    console.log('You are connected. Yay.')
   }
-  console.log('Connection established');
-});
 
-con.end(function(err) {
-  //The connection is terminated gracefully
-  //Ensures all previous enqueued queries are still before sending a COM_QUIT packet to the MySQL server
+  con.query('CREATE TABLE people(id int primary key, name varchar(255), age int, address text)', function(err, result) {
+    if (err) {
+      throw err;
+    } else {
+      con.query('INSERT INTO people (name, age, address) VALUES (?, ?, ?)', ['Larry', '41', 'California, USA'], function(err, result) {
+        if (err) {
+          throw err;
+        } else {
+          con.query('SELECT * FROM people', function(err, results) {
+            if (err) {
+              throw err;
+            } else {
+              console.log(results[0].id)
+              console.log(results[0].name)
+              console.log(results[0].age)
+              console.log(results[0].address)
+            }
+          })
+        }
+      })
+    }
+  });
+
 });
