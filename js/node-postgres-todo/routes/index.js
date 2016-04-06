@@ -8,7 +8,7 @@ var connectionString = require(path.join(__dirname, "../", "config"));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.sendFile(path.join(__dirname, '../views', 'index.html'));
 });;
 
 // POST Request--CREATE
@@ -125,7 +125,7 @@ router.put('/api/v1/todos/:todo_id', function(req, res) {
 //-------------------------------------------------------------------
 router.delete('/api/v1/todos/:todo_id', function(req, res) {
 
-  var resuls = [];
+  var results = [];
 
   //Grab data from URL parameters
   var id = req.params.todo_id;
