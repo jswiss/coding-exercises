@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="nodeTodo">
 <head>
-  <title>Node Postgres Todo App</title>
-  <meta name="viewport" content="width=device-with, initial-scale=1.0" charset="UTF-8">
+  <title>Todo App - with Node + Express + Angular + PostgreSQL</title>
+  <meta name="viewport" content="width=device-with, initial-scale=1.0">
   <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="stylesheets/style.css" media="screen">
 </head>
+
 <body ng-controller="mainController">
   <div class="container">
-    <ul ng-repeat="todo in todoData">
-      <li><input type="checkbox" ng-click="deleteTodo(todo.id)">&nbsp;{{ todo.text }}</li>      
-    </ul>
+    
+    <div class="header">
+      <h1>Node Postgres Todo App</h1>
+      <hr>
+      <h1 class="lead">Node+Express+Angular+PostgreSQL</h1>
+    </div>
+
+    <div class="todo-form">
+      <form>
+        <div class="form-group">
+          <input type="text" class="form-control input-lg" placeholder="Add a todo..." ng-model="formData.text">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add Todo</button>
+      </form>
+    </div>
+
+    <div class="todo-list">
+      <ul ng-repeat="todo in todoData">
+        <li><h3><input class="lead" type="checkbox" ng-click="deleteTodo(todo.id)">&nbsp;{{ todo.text }}</h3></li>      
+      </ul>
+    </div>
   </div>
 
 
