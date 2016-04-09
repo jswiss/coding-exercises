@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine-html.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/boot.min.js"></script>
+    </head>
+    <body>
+    </body>
+    <script type="text/javascript">
+
+        //doesn't really test anything, just says what it should do
+        // describe('calculator', function() {
+        //     it('1 + 1 should equal 2');
+        // });
+
+        //failing test
+        // describe('calculator', function() {
+        //     it('1 + 1 should equal 2', function() {
+        //         expect(1 + 1).toBe(1);
+        //     });
+        // });
+        
+        //hardcoded passing test
+        var calculator = {
+            sum: function(x, y) {
+                return x + y;
+            },
+            subtract: function(x, y) {
+                return x - y;
+            },
+            divide: function(x, y) {
+                if(y !== 0) {
+                    return x/y;
+                } else {
+                    return 0;
+                }
+            }
+        }
+        describe('calculator', function() {
+
+            describe('sum', function() {
+                it('1 + 1 should equal 2', function() {
+                    expect(calculator.sum(1, 1)).toBe(2);
+                });
+            });
+
+            describe('subtract', function() {
+                it('1 - 1 should equal 0', function() {
+                    expect(calculator.subtract(1, 1)).toBe(0);
+                });
+            });
+
+            describe('divide', function() {
+                it('4 / 2 should equal 2', function() {
+                    expect(calculator.divide(4, 2)).toBe(2);
+                });
+            
+                it('zero divisor should equal 0', function() {
+                    expect(calculator.divide(4, 0)).toBe(0);
+                });
+            });
+            
+        });
+        
+
+    </script>
+</html>

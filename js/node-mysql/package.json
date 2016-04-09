@@ -1,5 +1,5 @@
 {
-  "name": "node-mysql",
+  "name": "node-api",
   "version": "1.0.0",
   "description": "Learning MySQL with Nodejs",
   "main": "app.js",
@@ -8,8 +8,11 @@
     "start": "nodemon app.js"
   },
   "dependencies": {
-    "express": "^4.10.6",
-    "mysql": "^2.5.4"
+    "express": "~4.0.0",
+    "mysql": "~2.5.0",
+    "body-parser": "~1.0.1",
+    "sequelize": "~2.0.0",
+    "crypto": "~0.0.3"
     },
   "author": "Joshua Swiss",
   "license": "ISC"

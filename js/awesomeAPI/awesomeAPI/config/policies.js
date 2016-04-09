@@ -23,6 +23,9 @@ module.exports.policies = {
   'auth': {
     '*': ['passport']
   },
+  'UserController': {
+    ' * ': ['passport', 'bearerAuth']
+  }
 
   /***************************************************************************
   *                                                                          *

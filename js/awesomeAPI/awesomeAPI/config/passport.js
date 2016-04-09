@@ -21,7 +21,7 @@ module.exports.passport = {
 
   bearer: {
     strategy: require('passport-http-bearer').Strategy
-  },
+  }
 
   // twitter: {
   //   name: 'Twitter',
@@ -73,5 +73,5 @@ module.exports.passport = {
   //     serverBaseURL: 'http://localhost:1337',
   //     serviceURL: 'http://localhost:1337/auth/cas/callback'
   //   }
-  }
-};
+  // }
+}

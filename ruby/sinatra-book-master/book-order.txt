@@ -1,0 +1,16 @@
+# This file is to define the order of the markdown files that make up the book.
+# Use this approach rather than than naming the files with 1_, 2_, and so on to force
+# a sort order.
+
+Introduction.markdown
+Getting_to_know_Sinatra.markdown
+Organizing_your_application.markdown
+Views.markdown
+Models.markdown
+Helpers.markdown
+Middleware.markdown
+Testing.markdown
+Development.markdown
+Deployment.markdown
+Contributing.markdown
+

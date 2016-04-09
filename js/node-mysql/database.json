@@ -1,0 +1,13 @@
+{
+  "dev": {
+    "driver": "mysql",
+    "user": "root",
+    "database": "node-mysql-tutorial",
+    "password": "root"
+  },
+  "production": {
+    "driver": "mysql",
+    "user": "root",
+    "database": "myapp"
+  }
+}
