@@ -2,15 +2,15 @@
   "name": "gridfs-tutorial",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "app.js",
   "dependencies": {
-  	"express": "latest",
-  	"ejs": "latest",
-  	"uid2": "latest",
-  	"mime": "latest"
+    "express": "^4.13.4",
+    "mongoose": "^4.4.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC"

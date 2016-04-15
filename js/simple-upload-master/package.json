@@ -1,0 +1,28 @@
+{
+  "name": "simple-upload",
+  "version": "0.0.1",
+  "description": "Simple file upload for Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "latest",
+    "express": "latest",
+    "method-override": "^2.3.5",
+    "mime": "latest",
+    "uid2": "latest"
+  },
+  "author": "Robert Onodi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robert52/simple-upload.git"
+  },
+  "bugs": {
+    "url": "https://github.com/robert52/simple-upload/issues"
+  },
+  "homepage": "https://github.com/robert52/simple-upload"
+}

@@ -1,28 +1,13 @@
-var express     = require('express');
-var app         = express();
-var server      = require('http').createServer(app);
-var controllers = require('./controllers');
+var express          = require('express');
+var app              = express();
+var busboyBodyParser = require('busboy-body-parser');
+var mongoose         = require('mongoose');
+var port             = process.env.PORT || 3000;
 
-//Config Express
+app.use(busboyBodyParser());
 
-app.engine('.html', require('ejs').__express);
-app.set('views', __dirname + '/views');
+mongoose.connect('mongodb://localhost:27017/gridfs');
 
-// Without this you would need to
-// supply the extension to res.render()
-// ex: res.render('users.html')
-app.set('view engine', 'html');
-
-app.configure(function() {
-	app.use(express.bodyParser());
-	app.use(express.methodOverride());
-	app.use(express.static(__dirname = '/public'));
-	app.use('/images', express.static(__dirname + '/writable'));
-	app.use(app.router);
-	app.engine('html', require('ejs').renderFile);
-});
-
-//start server
-server.listen(3000, function() {
-	console.log('express server up and running');
-});
+app.listen(port, function() {
+  console.log('server started on port: ' + port);
+})
