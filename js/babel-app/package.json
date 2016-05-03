@@ -1,0 +1,29 @@
+{
+  "name": "babel-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel-node": "babel-node --stage 0",
+    "start": "build/build-development"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.0.1"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.0",
+    "browserify": {
+      "transform": [
+        ["babelify", { "stage": [0] }]
+      ]
+      },
+    "nodemon": "^1.9.1",
+    "watchify": "^3.7.0"
+  }
+}
+
